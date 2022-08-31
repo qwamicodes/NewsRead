@@ -5,10 +5,12 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "write": "node-sass ./src/sass/main.scss ./src/assets/css/styles.css -w"
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "node-sass": "^7.0.1",
     "vue": "^3.2.13"
   },
   "devDependencies": {

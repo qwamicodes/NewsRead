@@ -1,0 +1,39 @@
+//placeholders
+%df {
+  display: flex;
+}
+
+%jcc {
+  justify-content: center;
+}
+
+%jcb {
+  justify-content: space-between;
+}
+
+%jce {
+  justify-content: space-evenly;
+}
+
+%aic {
+  align-items: center;
+}
+
+//mixins
+@mixin flexcenter {
+  @extend %df;
+  @extend %jcc;
+  @extend %aic;
+}
+
+@mixin flexeven {
+  @extend %df;
+  @extend %jce;
+  @extend %aic;
+}
+
+@mixin flexbtn {
+  @extend %df;
+  @extend %jcb;
+  @extend %aic;
+}

@@ -1,11 +1,16 @@
 <template>
-  <h3>News Read App</h3>
+  <NavVue />
+  <HeaderVue />
+  <CardsVue />
 </template>
 
 <script>
+import NavVue from "./components/Nav.vue";
+import HeaderVue from "./components/Header.vue";
+import CardsVue from "./components/Cards.vue";
+
 export default {
   name: "App",
+  components: { NavVue, HeaderVue, CardsVue },
 };
 </script>
-
-<style></style>

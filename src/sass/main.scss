@@ -1,0 +1,18 @@
+//base files
+@import "./base/variables";
+@import "./base/reset";
+@import "./base/typography";
+
+//utils
+@import "./utils/mixin";
+
+//components
+@import "./components/button";
+@import "./components/input";
+@import "./components/newscard";
+@import "./components/tabs";
+
+//pages
+@import "./pages/grid";
+@import "./pages/home";
+@import "./pages/newspage";

@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font: 300 $size "Poppins", sans-serif;
+}
+
+button,
+input {
+  outline: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  &:link,
+  &:visited,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+}

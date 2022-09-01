@@ -1,5 +1,5 @@
 .tabs {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   @include flexeven;
   height: 10rem;
@@ -10,11 +10,14 @@
   background: $secondary-color-20;
   color: $neutral-color-0;
   transition: all 350ms ease-in 100ms;
-  border-radius: 0.5rem;
-  padding: 2rem 5rem;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
   text-transform: capitalize;
+  border: 1px solid transparent;
+  font: 300 $size-small $primary-font;
 
   &.active {
+    border: 1px solid $secondary-color-20;
     background: $secondary-color-50;
     color: $neutral-color-0;
   }

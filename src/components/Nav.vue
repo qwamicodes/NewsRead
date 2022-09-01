@@ -2,23 +2,15 @@
   <nav class="nav">
     <div class="nav__name body-large-heading">ReadNews</div>
     <div class="nav__dropdown">
-      <select class="dropdown">
-        <option class="dropdown__value" value="en">en</option>
-        <option class="dropdown__value" value="fr">fr</option>
-        <option class="dropdown__value" value="ar">ar</option>
-        <option class="dropdown__value" value="de">de</option>
-        <option class="dropdown__value" value="en">en</option>
-        <option class="dropdown__value" value="es">es</option>
-        <option class="dropdown__value" value="fr">fr</option>
-        <option class="dropdown__value" value="he">he</option>
-        <option class="dropdown__value" value="it">it</option>
-        <option class="dropdown__value" value="nl">nl</option>
-        <option class="dropdown__value" value="no">no</option>
-        <option class="dropdown__value" value="pt">pt</option>
-        <option class="dropdown__value" value="ru">ru</option>
-        <option class="dropdown__value" value="sv">sv</option>
-        <option class="dropdown__value" value="ud">ud</option>
-        <option class="dropdown__value" value="zh">zh</option>
+      <select class="dropdown" v-model="language">
+        <option
+          v-for="(lang, index) in languages"
+          v-bind:key="index"
+          class="dropdown__value"
+          :value="lang"
+        >
+          {{ lang }}
+        </option>
       </select>
     </div>
   </nav>
@@ -27,5 +19,67 @@
 <script>
 export default {
   name: "NavVue",
+  data() {
+    return {
+      language: "en",
+      languages: [
+        "ae",
+        "ar",
+        "at",
+        "au",
+        "be",
+        "bg",
+        "br",
+        "ca",
+        "ch",
+        "cn",
+        "co",
+        "cu",
+        "cz",
+        "de",
+        "eg",
+        "en",
+        "fr",
+        "gb",
+        "gr",
+        "hk",
+        "hu",
+        "id",
+        "ie",
+        "il",
+        "in",
+        "it",
+        "jp",
+        "kr",
+        "lt",
+        "lv",
+        "ma",
+        "mx",
+        "my",
+        "ng",
+        "nl",
+        "no",
+        "nz",
+        "ph",
+        "pl",
+        "pt",
+        "ro",
+        "rs",
+        "ru",
+        "sa",
+        "se",
+        "sg",
+        "si",
+        "sk",
+        "th",
+        "tr",
+        "tw",
+        "ua",
+        "us",
+        "ve",
+        "za",
+      ],
+    };
+  },
 };
 </script>

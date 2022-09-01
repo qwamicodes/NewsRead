@@ -5,6 +5,10 @@
   border-radius: 0.5rem;
   padding: 1rem 2rem;
 
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+
   &__value {
     background: $primary-color-30;
     font: 300 $size-small $primary-font;

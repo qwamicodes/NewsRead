@@ -12,5 +12,7 @@
 </template>
 
 <script>
-export default { name: "CardVue" };
+export default {
+  name: "CardVue",
+};
 </script>

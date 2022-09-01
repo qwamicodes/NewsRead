@@ -6,6 +6,7 @@
       id="search"
       class="search__box"
       placeholder="Search anything"
+      v-model="search"
     />
     <button class="btn btn-search" type="submit">search</button>
   </form>
@@ -14,5 +15,10 @@
 <script>
 export default {
   name: "SearchVue",
+  data() {
+    return {
+      search: "",
+    };
+  },
 };
 </script>

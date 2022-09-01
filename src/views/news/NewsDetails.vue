@@ -1,5 +1,5 @@
 <template>
-  <router-view />
+  <div>Single news page</div>
 </template>
 
 <script>

@@ -6,7 +6,7 @@
     </h3>
     <SearchVue />
     <TabContainerVue />
-    <FilterVue />
+    <FilterVue :category="category" />
   </header>
 </template>
 
@@ -17,6 +17,12 @@ import TabContainerVue from "./TabContainer.vue";
 
 export default {
   name: "HeaderVue",
+  data() {
+    return {
+      category: "",
+    };
+  },
   components: { SearchVue, FilterVue, TabContainerVue },
+  methods: {},
 };
 </script>

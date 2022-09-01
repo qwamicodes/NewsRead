@@ -1,7 +1,7 @@
 .btn {
-  padding: 2rem 5rem;
+  padding: 1.8rem 4.5rem;
   cursor: pointer;
-  border-radius: 0.5rem;
+  border-radius: 10rem;
 
   &-search {
     font: 300 $size $primary-font;
@@ -9,5 +9,6 @@
     color: $neutral-color-0;
     border: 0;
     text-transform: capitalize;
+    margin-left: -15.5rem;
   }
 }

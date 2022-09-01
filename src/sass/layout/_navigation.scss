@@ -1,0 +1,7 @@
+.nav {
+  width: 80%;
+  max-width: 100vw;
+  height: 10rem;
+  @include flexbtn;
+  margin: 0 auto;
+}

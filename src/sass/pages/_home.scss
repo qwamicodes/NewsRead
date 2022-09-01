@@ -1,0 +1,15 @@
+.filter {
+  margin: 0 auto;
+  width: 50%;
+  height: 10rem;
+  @include flexbtn;
+  text-transform: capitalize;
+
+  &__title {
+    font: 400 $size-normal $primary-font;
+  }
+
+  &__sort {
+    font: 300 $size-small $primary-font;
+  }
+}

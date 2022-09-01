@@ -11,8 +11,15 @@
 @import "./components/input";
 @import "./components/newscard";
 @import "./components/tabs";
+@import "./components/dropdown";
+
+//layout
+@import "./layout/navigation";
+@import "./layout/grid";
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/form";
 
 //pages
-@import "./pages/grid";
 @import "./pages/home";
 @import "./pages/newspage";

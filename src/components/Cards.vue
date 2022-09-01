@@ -1,7 +1,11 @@
 <template>
-  <div>Cards Components</div>
+  <div class="cards">
+    <Card />
+  </div>
 </template>
 
 <script>
-export default { name: "CardsVue" };
+import Card from "./Card.vue";
+
+export default { name: "CardsVue", components: { Card } };
 </script>

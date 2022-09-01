@@ -1,0 +1,15 @@
+.search {
+  &__box {
+    font: 300 $size $primary-font;
+    background-color: $secondary-color-10;
+    color: $neutral-color-0;
+    border: 0;
+    width: 60%;
+    padding: 2rem 5rem;
+    border-radius: 0.5rem;
+
+    &::placeholder {
+      color: currentColor;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.tabs {
+  width: 80%;
+  margin: 0 auto;
+  @include flexeven;
+  height: 10rem;
+  cursor: pointer;
+}
+
+.tab {
+  background: $secondary-color-20;
+  color: $neutral-color-0;
+  transition: all 350ms ease-in 100ms;
+  border-radius: 0.5rem;
+  padding: 2rem 5rem;
+  text-transform: capitalize;
+
+  &.active {
+    background: $secondary-color-50;
+    color: $neutral-color-0;
+  }
+}

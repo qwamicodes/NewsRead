@@ -1,0 +1,13 @@
+.btn {
+  padding: 2rem 5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+
+  &-search {
+    font: 300 $size $primary-font;
+    background: $secondary-color-30;
+    color: $neutral-color-0;
+    border: 0;
+    text-transform: capitalize;
+  }
+}

@@ -10,10 +10,13 @@ html {
 
 body {
   font: 300 $size "Poppins", sans-serif;
+  background: $linear-background-gradient;
+  color: $neutral-color-0;
 }
 
 button,
-input {
+input,
+select {
   outline: 0;
 
   &:focus {
@@ -33,4 +36,19 @@ a {
   &:focus {
     text-decoration: none;
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 8px;
+  background-color: $secondary-color-40;
+  border-radius: 10rem;
+}
+
+#app {
+  width: 100vw;
+  overflow: hidden;
 }

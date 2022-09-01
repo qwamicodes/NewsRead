@@ -1,1 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
+.primary-heading {
+  font: 700 4.2rem $primary-font;
+}
+
+.secondary-heading {
+  font: 700 $size-large $primary-font;
+}
+
+.body-large-heading {
+  font: 400 $size-large $primary-font;
+}
+
+.body-heading {
+  font: 300 $size-normal $primary-font;
+}
+
+.body-small-heading {
+  font: 300 $size-small $primary-font;
+}
+
+.color-heading {
+  color: $secondary-color-20;
+}

@@ -1,0 +1,12 @@
+.dropdown {
+  background: transparent;
+  color: $neutral-color-0;
+  border-color: $neutral-color-0;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+
+  &__value {
+    background: $primary-color-30;
+    font: 300 $size-small $primary-font;
+  }
+}

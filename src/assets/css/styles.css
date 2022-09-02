@@ -53,7 +53,7 @@ a:link, a:visited, a:active, a:focus {
   font: 300 2rem "Poppins", sans-serif; }
 
 .body-small-heading {
-  font: 300 1.5rem "Poppins", sans-serif; }
+  font: 300 1.8rem "Poppins", sans-serif; }
 
 .color-heading {
   color: #69aab9; }
@@ -106,19 +106,31 @@ form#search-form {
   margin-top: 10rem; }
 
 .card {
+  position: relative;
   cursor: pointer;
   width: 45rem;
   height: 50rem;
   background-color: #05728a;
   color: #fff;
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 50% 50%;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: rgba(0, 19, 65, 0.15) 0px 48px 100px 0px;
   transition: all 400ms ease; }
   .card:hover {
     transform: translateY(-1rem) scale(1.02); }
+  .card__source {
+    font: 400 1.8rem "Poppins", sans-serif;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #fff;
+    color: #045b6e;
+    box-shadow: rgba(3, 68, 83, 0.1) 0px 10px 15px -3px, rgba(3, 68, 83, 0.05) 0px 4px 6px -2px;
+    display: flex;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.5rem; }
   .card__image {
     width: 100%;
     height: 100%;
@@ -126,6 +138,34 @@ form#search-form {
     .card__image--container {
       width: 100%;
       height: 100%; }
+  .card__details {
+    display: grid;
+    grid-template-rows: 50% 30% 20%;
+    color: rgba(255, 255, 255, 0.8); }
+    .card__details--title {
+      max-height: 90%;
+      overflow: hidden !important;
+      display: box;
+      display: block;
+      white-space: normal;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      width: 90%;
+      margin: 1rem auto;
+      color: #fff; }
+    .card__details--author {
+      font: 300 1.5rem "Poppins", sans-serif;
+      width: 80%;
+      display: flex;
+      align-items: center;
+      margin-left: 3rem; }
+    .card__details--date {
+      font: 300 1.5rem "Poppins", sans-serif;
+      display: flex;
+      justify-self: flex-end;
+      padding: 0.5rem 2rem; }
 
 .tabs {
   width: 70%;

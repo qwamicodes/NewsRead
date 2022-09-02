@@ -27,8 +27,8 @@ export default {
       .then((data) => (this.articles = data.articles))
       .catch((err) => console.log(err.code, err.message));
   },
-  updated() {
-    console.log(this.articles);
-  },
+  // updated() {
+  //   console.log(this.articles);
+  // },
 };
 </script>

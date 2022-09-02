@@ -1,21 +1,34 @@
 <template>
-  <div class="cards">
-    <Card />
+  <div v-if="articles?.length > 0" class="cards row-col-3">
+    <Card
+      v-for="(article, index) in articles"
+      v-bind:key="index"
+      :article="article"
+    />
   </div>
 </template>
 
 <script>
 import Card from "./Card.vue";
 
-// async getTopHeadlines() {
-//       const res = await fetch(
-//         `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEWS_API_KEY}`
-//       );
-//       console.log(JSON.parse(res));
-//     },
-
 export default {
   name: "CardsVue",
   components: { Card },
+  data() {
+    return {
+      articles: null,
+    };
+  },
+  mounted() {
+    fetch(
+      `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.VUE_APP_NEWS_API_KEY}`
+    )
+      .then((res) => res.json())
+      .then((data) => (this.articles = data.articles))
+      .catch((err) => console.log(err.code, err.message));
+  },
+  updated() {
+    console.log(this.articles);
+  },
 };
 </script>

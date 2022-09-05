@@ -8,6 +8,18 @@
     padding: 2rem 5rem;
     border-radius: 10rem;
 
+    @media only screen and (max-width: 77.5em) {
+      width: 80%;
+    }
+
+    @media only screen and (max-width: 65.5em) {
+      width: 90%;
+    }
+
+    @media only screen and (max-width: 59.375em) {
+      width: 95%;
+    }
+
     &::placeholder {
       color: currentColor;
     }

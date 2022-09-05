@@ -1,5 +1,11 @@
 <template>
-  <div class="card">
+  <a
+    target="_blank"
+    rel="nonreferrer"
+    :href="article.url"
+    :article="article"
+    class="card"
+  >
     <div class="card__source">{{ article.source.name }}</div>
     <div class="card__image--container">
       <img :src="article.urlToImage" alt="News Image" class="card__image" />
@@ -13,15 +19,19 @@
         {{ new Date(article.publishedAt).toDateString() }}
       </div>
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
+import { v4 } from "uuid";
+
 export default {
   name: "CardVue",
   props: ["article"],
-  // mounted() {
-  //   console.log(this.article);
-  // },
+  data() {
+    return {
+      id: v4(),
+    };
+  },
 };
 </script>

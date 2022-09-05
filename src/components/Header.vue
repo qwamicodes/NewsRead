@@ -23,6 +23,10 @@ export default {
     };
   },
   components: { SearchVue, FilterVue, TabContainerVue },
-  methods: {},
+  methods: {
+    // selCurrentCategory () {
+    //   this.category =
+    // }
+  },
 };
 </script>

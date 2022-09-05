@@ -5,6 +5,14 @@
   @include flexbtn;
   text-transform: capitalize;
 
+  @media only screen and (max-width: 90em) {
+    width: 70%;
+  }
+
+  @media only screen and (max-width: 77.5em) {
+    width: 80%;
+  }
+
   &__title {
     font: 400 $size-normal $primary-font;
   }

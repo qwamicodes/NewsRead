@@ -6,6 +6,12 @@
 
 html {
   font-size: 62.5%; }
+  @media only screen and (max-width: 77.5em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 26.5625em) {
+    html {
+      font-size: 40%; } }
 
 body {
   font: 300 1.8rem "Poppins", sans-serif;
@@ -84,6 +90,9 @@ form#search-form {
     border: 0;
     text-transform: capitalize;
     margin-left: -15.5rem; }
+    @media only screen and (max-width: 23.4375em) {
+      .btn-search {
+        margin-left: -14rem; } }
 
 .search__box {
   font: 300 1.8rem "Poppins", sans-serif;
@@ -93,6 +102,15 @@ form#search-form {
   width: 70%;
   padding: 2rem 5rem;
   border-radius: 10rem; }
+  @media only screen and (max-width: 77.5em) {
+    .search__box {
+      width: 80%; } }
+  @media only screen and (max-width: 65.5em) {
+    .search__box {
+      width: 90%; } }
+  @media only screen and (max-width: 59.375em) {
+    .search__box {
+      width: 95%; } }
   .search__box::placeholder {
     color: currentColor; }
 
@@ -103,7 +121,7 @@ form#search-form {
   display: flex;
   flex-wrap: wrap;
   gap: 5rem;
-  margin-top: 10rem; }
+  margin: 10rem auto; }
 
 .card {
   position: relative;
@@ -116,6 +134,7 @@ form#search-form {
   grid-template-rows: 50% 50%;
   border-radius: 1rem;
   overflow: hidden;
+  margin: 0 auto;
   box-shadow: rgba(0, 19, 65, 0.15) 0px 48px 100px 0px;
   transition: all 400ms ease; }
   .card:hover {
@@ -145,7 +164,6 @@ form#search-form {
     .card__details--title {
       max-height: 90%;
       overflow: hidden !important;
-      display: box;
       display: block;
       white-space: normal;
       display: -webkit-box;
@@ -172,6 +190,24 @@ form#search-form {
   margin: 0 auto;
   height: 10rem;
   cursor: pointer; }
+  @media only screen and (max-width: 90em) {
+    .tabs {
+      flex-wrap: wrap;
+      width: 75%; } }
+  @media only screen and (max-width: 79.3125em) {
+    .tabs {
+      width: 80%; } }
+  @media only screen and (max-width: 59.375em) {
+    .tabs {
+      width: 90%; } }
+  @media only screen and (max-width: 55.5em) {
+    .tabs {
+      width: 80%;
+      gap: 1.5rem;
+      height: 13rem; } }
+  @media only screen and (max-width: 34.625em) {
+    .tabs {
+      height: 20rem; } }
 
 .tab {
   background: #69aab9;
@@ -193,6 +229,9 @@ form#search-form {
   border-color: #fff;
   border-radius: 0.5rem;
   padding: 1rem 2rem; }
+  @media only screen and (max-width: 37.5em) {
+    .dropdown {
+      padding: 0.5rem 1rem; } }
   .dropdown ::-webkit-scrollbar {
     width: 2px; }
   .dropdown__value {
@@ -209,18 +248,50 @@ form#search-form {
   width: 25%;
   margin: 0 auto;
   text-align: center; }
+  @media only screen and (max-width: 100em) {
+    .header__title {
+      width: 30%; } }
+  @media only screen and (max-width: 91.875em) {
+    .header__title {
+      width: 40%; } }
+  @media only screen and (max-width: 55.5em) {
+    .header__title {
+      width: 60%; } }
+  @media only screen and (max-width: 37.5em) {
+    .header__title {
+      width: 80%; } }
 
 form#search-form {
   width: 60%;
   margin: 0 auto;
   height: 10rem; }
+  @media only screen and (max-width: 55.5em) {
+    form#search-form {
+      width: 75%; } }
+  @media only screen and (max-width: 27.5em) {
+    form#search-form {
+      width: 82%; } }
+  @media only screen and (max-width: 23.4375em) {
+    form#search-form {
+      width: 98%; } }
 
 .filter {
   margin: 0 auto;
   width: 50%;
   height: 10rem;
   text-transform: capitalize; }
+  @media only screen and (max-width: 90em) {
+    .filter {
+      width: 70%; } }
+  @media only screen and (max-width: 77.5em) {
+    .filter {
+      width: 80%; } }
   .filter__title {
     font: 400 2rem "Poppins", sans-serif; }
   .filter__sort {
     font: 300 1.5rem "Poppins", sans-serif; }
+
+.newsdetails {
+  width: 100%;
+  max-height: 90rem;
+  height: 100%; }

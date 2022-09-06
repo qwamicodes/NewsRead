@@ -8,9 +8,8 @@
 import NavVue from "../components/Nav.vue";
 import HeaderVue from "../components/Header.vue";
 import CardsVue from "../components/Cards.vue";
-import getHeadlines from "@/composable/getHeadlines";
-import { ref } from "vue";
-import { mapState, useStore } from "vuex";
+import { useStore } from "vuex";
+import { onMounted, watch } from "vue";
 
 export default {
   name: "App",
@@ -18,20 +17,23 @@ export default {
   setup() {
     const store = useStore();
 
-    const search = ref(null);
+    onMounted(() => store.dispatch("getHeadlines"));
 
-    const { data, error, load } = getHeadlines(store.state.category);
-    load();
+    watch(
+      () => store.getters.getCategory,
+      () => {
+        store.dispatch("getHeadlines");
+      }
+    );
 
-    store.commit("setArticles", data);
+    watch(
+      () => store.getters.getSort,
+      () => {
+        store.dispatch("getHeadlines");
+      }
+    );
 
-    return { data, error, search };
-  },
-  computed: mapState["category"],
-  watch: {
-    category(oldValue, newValue) {
-      console.log(oldValue, newValue);
-    },
+    return {};
   },
 };
 </script>

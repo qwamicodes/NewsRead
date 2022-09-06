@@ -21,7 +21,7 @@ export default {
         return this.$store.state.searchValue;
       },
       set(newValue) {
-        this.$store.commit.setLanguageValue(newValue);
+        this.$store.commit("setLanguageValue", newValue);
       },
     },
   },

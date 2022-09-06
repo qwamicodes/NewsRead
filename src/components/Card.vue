@@ -16,7 +16,8 @@
       </div>
       <div class="card__details--author">{{ article.author ?? "Unknown" }}</div>
       <div class="card__details--date">
-        {{ new Date(article.publishedAt).toDateString() }}
+        {{ new Date(article.publishedAt).toDateString() }} ,
+        {{ new Date(article.publishedAt).toLocaleTimeString() }}
       </div>
     </div>
   </a>

@@ -17,11 +17,6 @@ import TabContainerVue from "./TabContainer.vue";
 
 export default {
   name: "HeaderVue",
-  data() {
-    return {
-      category: "",
-    };
-  },
   components: { SearchVue, FilterVue, TabContainerVue },
 };
 </script>

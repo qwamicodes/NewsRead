@@ -47,7 +47,7 @@ export default createStore({
     async getNews({ commit }) {
       try {
         const res = await fetch(
-          `https://newsapi.org/v2/everything?q=${this.state.searchValue}&language=${this.state.language}&sortBy=${this.state.sort}&apiKey==${process.env.VUE_APP_NEWS_API_KEY}`
+          `https://newsapi.org/v2/everything?q=${this.state.searchValue}&language=${this.state.language}&sortBy=${this.state.sort}&apiKey=${process.env.VUE_APP_NEWS_API_KEY}`
         );
 
         if (!res.status === 200) return;
@@ -63,6 +63,9 @@ export default createStore({
     },
     getSort(state) {
       return state.sort;
+    },
+    getSearchValue(state) {
+      return state.searchValue;
     },
   },
   devtools: true,

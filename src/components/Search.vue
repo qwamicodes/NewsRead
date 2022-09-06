@@ -1,5 +1,5 @@
 <template>
-  <form action="#" id="search-form">
+  <form @submit.prevent id="search-form">
     <input
       type="search"
       name="search"
@@ -8,7 +8,9 @@
       placeholder="Search anything"
       v-model="searchValue"
     />
-    <button class="btn btn-search" type="submit">search</button>
+    <button @click="searchNews" class="btn btn-search" type="submit">
+      search
+    </button>
   </form>
 </template>
 
@@ -23,6 +25,13 @@ export default {
       set(newValue) {
         this.$store.commit("setLanguageValue", newValue);
       },
+    },
+  },
+  methods: {
+    searchNews() {
+      this.$store.state.searchValue.length > 0
+        ? this.$store.dispatch("getNews")
+        : this.$store.dispatch("getHeadlines");
     },
   },
 };

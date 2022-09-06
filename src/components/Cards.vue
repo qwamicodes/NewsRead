@@ -6,6 +6,18 @@
       :article="article"
     />
   </div>
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: capitalize;
+      height: 40rem;
+    "
+    v-else
+  >
+    no news articles found
+  </div>
 </template>
 
 <script>

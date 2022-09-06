@@ -33,6 +33,13 @@ export default {
       }
     );
 
+    watch(
+      () => store.getters.getSearchValue,
+      (value) => {
+        value.length <= 0 && store.dispatch("getHeadlines");
+      }
+    );
+
     return {};
   },
 };

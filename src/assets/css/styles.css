@@ -90,9 +90,6 @@ form#search-form {
     border: 0;
     text-transform: capitalize;
     margin-left: -15.5rem; }
-    @media only screen and (max-width: 23.4375em) {
-      .btn-search {
-        margin-left: -14rem; } }
 
 .search__box {
   font: 300 1.8rem "Poppins", sans-serif;
@@ -208,6 +205,9 @@ form#search-form {
   @media only screen and (max-width: 34.625em) {
     .tabs {
       height: 20rem; } }
+  @media only screen and (max-width: 18em) {
+    .tabs {
+      height: 25rem; } }
 
 .tab {
   background: #69aab9;

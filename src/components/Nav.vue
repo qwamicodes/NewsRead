@@ -21,7 +21,6 @@ export default {
   name: "NavVue",
   data() {
     return {
-      language: "en",
       languages: [
         "ae",
         "ar",
@@ -80,6 +79,17 @@ export default {
         "za",
       ],
     };
+  },
+  computed: {
+    language: {
+      get() {
+        return this.$store.state.language;
+      },
+
+      set(newValue) {
+        this.$store.commit("setLangValue", newValue);
+      },
+    },
   },
 };
 </script>

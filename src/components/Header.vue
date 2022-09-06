@@ -4,9 +4,9 @@
       Find all your <span class="color-heading">favorite</span> news in one
       <span class="color-heading">place</span>
     </h3>
-    <SearchVue :search="search" />
+    <SearchVue />
     <TabContainerVue />
-    <FilterVue :category="category" />
+    <FilterVue />
   </header>
 </template>
 
@@ -17,7 +17,6 @@ import TabContainerVue from "./TabContainer.vue";
 
 export default {
   name: "HeaderVue",
-  props: ["search"],
   data() {
     return {
       category: "",

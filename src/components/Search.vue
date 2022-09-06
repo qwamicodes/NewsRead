@@ -6,6 +6,7 @@
       id="search"
       class="search__box"
       placeholder="Search anything"
+      v-model="searchValue"
     />
     <button class="btn btn-search" type="submit">search</button>
   </form>
@@ -14,11 +15,15 @@
 <script>
 export default {
   name: "SearchVue",
-  props: ["search"],
-  data() {
-    return {
-      // search: null,
-    };
+  computed: {
+    searchValue: {
+      get() {
+        return this.$store.state.searchValue;
+      },
+      set(newValue) {
+        this.$store.commit.setLanguageValue(newValue);
+      },
+    },
   },
 };
 </script>

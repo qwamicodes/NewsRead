@@ -1,13 +1,15 @@
 import { ref } from "vue";
 
-const getNews = (lang, sortBy, keyword) => {
+const getHeadlines = (category) => {
   const data = ref(null);
   const error = ref(null);
+
+  category === "all" ? (category = "") : category;
 
   const load = async () => {
     try {
       const res = await fetch(
-        `https://newsapi.org/v2/everything?q=${keyword}&language=${lang}&sortBy=${sortBy}&apiKey==${process.env.VUE_APP_NEWS_API_KEY}`
+        `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${process.env.VUE_APP_NEWS_API_KEY}`
       );
 
       if (!res.status === 200) return;
@@ -20,4 +22,4 @@ const getNews = (lang, sortBy, keyword) => {
   return { data, error, load };
 };
 
-export default getNews;
+export default getHeadlines;

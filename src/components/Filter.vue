@@ -1,6 +1,6 @@
 <template>
   <div class="filter">
-    <div class="filter__title">{{ category }} news</div>
+    <div class="filter__title">{{ $store.state.category }} news</div>
     <div class="filter__sort">
       sort by:
       <select name="sort" id="sort" class="dropdown" v-model="sortBy">
@@ -17,10 +17,15 @@
 <script>
 export default {
   name: "FilterVue",
-  props: ["category"],
-  data() {
-    return { sortBy: "popularity" };
+  computed: {
+    sortBy: {
+      get() {
+        return this.$store.state.sort;
+      },
+      set(newValue) {
+        this.$store.commit("setSortValue", newValue);
+      },
+    },
   },
-  methods: {},
 };
 </script>

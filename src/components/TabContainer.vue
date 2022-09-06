@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       tabValues: [
-        { name: "all categories", active: true },
+        { name: "all", active: true },
         { name: "business", active: false },
         { name: "entertainment", active: false },
         { name: "general", active: false },
@@ -28,7 +28,6 @@ export default {
         { name: "sports", active: false },
         { name: "technology", active: false },
       ],
-      value: "all",
     };
   },
   methods: {
@@ -37,6 +36,7 @@ export default {
       this.tabValues.map((tab) => {
         if (tab.name.includes(value)) {
           tab.active = true;
+          this.$store.commit("setCategoryValue", tab.name);
           return (this.value = tab.name);
         }
       });

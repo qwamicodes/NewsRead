@@ -64,31 +64,39 @@ a:link, a:visited, a:active, a:focus {
 .color-heading {
   color: #69aab9; }
 
-.tabs, .nav, form#search-form, .filter {
+.tabs, .nav, form#search-form, .filter, .newsdetails__menu, .newsdetails__container--image, .newsdetails__details--source, .newsdetails__details--buttons {
   display: flex; }
 
-form#search-form {
+form#search-form, .newsdetails__menu, .newsdetails__container--image, .newsdetails__details--source {
   justify-content: center; }
 
-.nav, .filter {
+.nav, .filter, .newsdetails__details--buttons {
   justify-content: space-between; }
 
 .tabs {
   justify-content: space-evenly; }
 
-.tabs, .nav, form#search-form, .filter {
+.tabs, .nav, form#search-form, .filter, .newsdetails__menu, .newsdetails__container--image, .newsdetails__details--source, .newsdetails__details--buttons {
   align-items: center; }
 
 .btn {
   padding: 1.8rem 4.5rem;
   cursor: pointer;
   border-radius: 10rem; }
-  .btn-search {
+  .btn-primary {
     font: 300 1.8rem "Poppins", sans-serif;
     background: #378ea1;
     color: #fff;
     border: 0;
+    text-transform: capitalize; }
+  .btn-secondary {
+    font: 300 1.8rem "Poppins", sans-serif;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
     text-transform: capitalize;
+    padding: 1.6rem 4rem; }
+  .btn-search {
     margin-left: -15.5rem; }
 
 .search__box {
@@ -138,15 +146,16 @@ form#search-form {
     transform: translateY(-1rem) scale(1.02); }
   .card__source {
     font: 400 1.8rem "Poppins", sans-serif;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
     background: #fff;
     color: #045b6e;
     box-shadow: rgba(3, 68, 83, 0.1) 0px 10px 15px -3px, rgba(3, 68, 83, 0.05) 0px 4px 6px -2px;
     display: flex;
     padding: 0.7rem 1.5rem;
     border-radius: 0.5rem; }
+    .card__source--position {
+      position: absolute;
+      top: 1rem;
+      right: 1rem; }
   .card__image {
     width: 100%;
     height: 100%;
@@ -294,4 +303,82 @@ form#search-form {
 .newsdetails {
   width: 100%;
   max-height: 90rem;
-  height: 100%; }
+  height: 100%;
+  display: grid;
+  grid-template-rows: 20% 80%; }
+  @media only screen and (max-width: 56.25em) {
+    .newsdetails {
+      max-height: none;
+      height: fit-content;
+      grid-template-rows: 10% 80%;
+      height: 150vh; } }
+  .newsdetails__menu {
+    justify-content: flex-start;
+    width: 80%;
+    margin: 0 auto; }
+  .newsdetails__container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    width: 100%;
+    height: 75rem; }
+    @media only screen and (max-width: 64em) {
+      .newsdetails__container {
+        grid-template-columns: 1.1fr 1.5fr; } }
+    @media only screen and (max-width: 56.25em) {
+      .newsdetails__container {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+        height: fit-content; } }
+    .newsdetails__container--image {
+      width: 100%;
+      height: 100%;
+      position: relative; }
+      .newsdetails__container--image img {
+        object-fit: cover;
+        width: 90%;
+        height: 90%;
+        border-radius: 1rem; }
+      .newsdetails__container--image-source {
+        position: absolute;
+        top: 5rem;
+        right: 10rem; }
+  .newsdetails__details {
+    display: grid;
+    grid-template-rows: 15% 10% 20% 30% 15%;
+    height: 90%;
+    width: 80%;
+    margin: auto; }
+    @media only screen and (max-width: 56.25em) {
+      .newsdetails__details {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 150%; } }
+    .newsdetails__details--source {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; }
+    .newsdetails__details--author {
+      display: flex;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.5); }
+    .newsdetails__details--title {
+      display: flex;
+      align-items: center;
+      font: 400 2.4rem "Poppins", sans-serif; }
+    .newsdetails__details--content {
+      display: flex;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.8);
+      font: 300 1.8rem "Poppins", sans-serif; }
+    .newsdetails__details--button {
+      border-radius: 0.5rem; }
+      .newsdetails__details--buttons {
+        width: 60%; }
+        @media only screen and (max-width: 100em) {
+          .newsdetails__details--buttons {
+            width: 80%; } }
+        @media only screen and (max-width: 62.5em) {
+          .newsdetails__details--buttons {
+            width: 100%; } }

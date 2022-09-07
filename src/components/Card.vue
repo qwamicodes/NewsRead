@@ -1,12 +1,12 @@
 <template>
-  <a
-    target="_blank"
-    rel="nonreferrer"
-    :href="article.url"
-    :article="article"
+  <router-link
+    @click="$store.commit('setCurrentArticle', article)"
+    :to="{ name: 'NewsDetails', params: { id } }"
     class="card"
   >
-    <div class="card__source">{{ article.source.name }}</div>
+    <div class="card__source card__source--position">
+      {{ article.source.name }}
+    </div>
     <div class="card__image--container">
       <img :src="article.urlToImage" alt="News Image" class="card__image" />
     </div>
@@ -20,7 +20,7 @@
         {{ new Date(article.publishedAt).toLocaleTimeString() }}
       </div>
     </div>
-  </a>
+  </router-link>
 </template>
 
 <script>

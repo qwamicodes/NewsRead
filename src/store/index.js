@@ -7,6 +7,7 @@ export default createStore({
     category: "all",
     sort: "popularity",
     articles: null,
+    currentArticle: null,
   },
   mutations: {
     setSortValue(state, sortValue) {
@@ -20,6 +21,9 @@ export default createStore({
     },
     setArticles(state, newArticles) {
       state.articles = newArticles;
+    },
+    setCurrentArticle(state, newCurrentArticle) {
+      state.currentArticle = newCurrentArticle;
     },
     setLanguageValue(state, newSearch) {
       state.searchValue = newSearch;

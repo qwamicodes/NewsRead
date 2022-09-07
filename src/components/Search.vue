@@ -8,7 +8,11 @@
       placeholder="Search anything"
       v-model="searchValue"
     />
-    <button @click="searchNews" class="btn btn-search" type="submit">
+    <button
+      @click="searchNews"
+      class="btn btn-primary btn-search"
+      type="submit"
+    >
       search
     </button>
   </form>

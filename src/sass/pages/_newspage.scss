@@ -2,4 +2,116 @@
   width: 100%;
   max-height: 90rem;
   height: 100%;
+  display: grid;
+  grid-template-rows: 20% 80%;
+
+  @media only screen and (max-width: 56.25em) {
+    max-height: none;
+    height: fit-content;
+    grid-template-rows: 10% 80%;
+    height: 150vh;
+  }
+
+  &__menu {
+    @include flexcenter;
+    justify-content: flex-start;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    width: 100%;
+    height: 75rem;
+
+    @media only screen and (max-width: 64em) {
+      grid-template-columns: 1.1fr 1.5fr;
+    }
+
+    @media only screen and (max-width: 56.25em) {
+      grid-template-columns: none;
+      grid-template-rows: 1fr 1fr;
+      height: fit-content;
+    }
+
+    &--image {
+      width: 100%;
+      height: 100%;
+      @include flexcenter;
+      position: relative;
+
+      img {
+        object-fit: cover;
+        width: 90%;
+        height: 90%;
+        border-radius: 1rem;
+      }
+
+      &-source {
+        position: absolute;
+        top: 5rem;
+        right: 10rem;
+      }
+    }
+  }
+
+  &__details {
+    display: grid;
+    grid-template-rows: 15% 10% 20% 30% 15%;
+    height: 90%;
+    width: 80%;
+    margin: auto;
+
+    @media only screen and (max-width: 56.25em) {
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 150%;
+    }
+
+    &--source {
+      display: flex;
+      align-items: center;
+      @include flexcenter;
+      justify-content: flex-start;
+    }
+
+    &--author {
+      display: flex;
+      align-items: center;
+      color: rgba($neutral-color-0, 0.5);
+    }
+
+    &--title {
+      display: flex;
+      align-items: center;
+      font: 400 $size-large $primary-font;
+    }
+
+    &--content {
+      display: flex;
+      align-items: center;
+      color: rgba($neutral-color-0, 0.8);
+      font: 300 $size $primary-font;
+    }
+
+    &--button {
+      border-radius: 0.5rem;
+
+      &s {
+        @include flexbtn;
+        width: 60%;
+
+        @media only screen and (max-width: 100em) {
+          width: 80%;
+        }
+
+        @media only screen and (max-width: 62.5em) {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

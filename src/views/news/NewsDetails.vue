@@ -1,36 +1,45 @@
 <template>
   <div class="newsdetails">
     <div class="newsdetails__menu">
-      <div class="newsdetails__menu--button">
-        <!-- <ChevronsLeftIcon size="24" /> -->
-        back
-      </div>
+      <button @click="$router.back(-1)" class="btn btn-primary">back</button>
     </div>
     <div class="newsdetails__container">
       <div class="newsdetails__container--image">
-        <img :src="article?.urlToImage" alt="#" />
-      </div>
-      <div class="news__container--image-source">
-        {{ article?.source.name }}
+        <img
+          :src="$store.state.currentArticle?.urlToImage"
+          :alt="$store.state.currentArticle?.title"
+        />
       </div>
       <div class="newsdetails__details">
-        <div class="newsdetails__details--tag">
-          <Tab :value="article?.category" />
+        <div class="newsdetails__details--source">
+          <div class="card__source">
+            {{ $store.state.currentArticle?.source.name }}
+          </div>
         </div>
-        <div class="newsdetails__details--author">{{ article?.author }}</div>
-        <div class="newsdetails__details--title">{{ article?.title }}</div>
+        <div class="newsdetails__details--author">
+          {{ $store.state.currentArticle?.author }}
+        </div>
+        <div class="newsdetails__details--title">
+          {{ $store.state.currentArticle?.title }}
+        </div>
         <div class="newsdetails__details--content">
-          {{ article?.description }}
+          {{ $store.state.currentArticle?.content }}
         </div>
         <div class="newsdetails__details--buttons">
-          <a :href="article?.url" class="newsdetails__details--button-primary"
+          <a
+            :href="$store.state.currentArticle?.url"
+            target="_target"
+            rel="nonreferrer"
+            class="btn btn-primary newsdetails__details--button"
             >view page
-            <!-- <Link2Icon size="24"/> -->
           </a>
-          <a href="#" class="newsdetails__details--button-primary"
-            >share
-            <!-- <ShareIcon size="24" /> -->
-          </a>
+          <button
+            ref="buttonCopy"
+            @click="copyLink($store.state.currentArticle?.url)"
+            class="btn btn-secondary newsdetails__details--button"
+          >
+            copy link
+          </button>
         </div>
       </div>
     </div>
@@ -38,22 +47,14 @@
 </template>
 
 <script>
-// import { ChevronsLeftIcon, ShareIcon, Link2Icon } from "vue-feather-icons";
-import Tab from "@/components/Tab.vue";
-
 export default {
   props: ["id"],
-  components: { Tab },
-  data() {
-    return {
-      article: null,
-    };
-  },
-  created() {
-    // this.article = this.$route.params.article;
-  },
-  updated() {
-    console.log(this.id, this.article);
+  methods: {
+    copyLink(link) {
+      navigator.clipboard.writeText(link);
+      this.$refs.buttonCopy.innerHTML = "copied";
+      this.$refs.buttonCopy.classList.add("btn-copy");
+    },
   },
 };
 </script>

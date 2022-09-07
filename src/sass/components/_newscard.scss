@@ -29,9 +29,6 @@
 
   &__source {
     font: 400 $size $primary-font;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
     background: $neutral-color-0;
     color: $secondary-color-50;
     box-shadow: rgba($secondary-color-60, 0.1) 0px 10px 15px -3px,
@@ -39,6 +36,12 @@
     display: flex;
     padding: 0.7rem 1.5rem;
     border-radius: 0.5rem;
+
+    &--position {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
   }
 
   &__image {
